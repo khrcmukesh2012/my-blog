@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<div class="container" style="margin-top: 100px">
+  <div class="row">
+    <div class="col-sm-1">
+      
+    </div>
+    
+    <div class="col-sm-10" >
+        {% for videos in video %}
+        <ul style="list-style-type: none;">
+            <li>
+                <div class="card" style="width:750px">
+                  <div class="card bg-white">
+                    <div class="card-body text-center">
+                        <h4 style="font-size: bold;color:blue;">{{videos.name}}</h4>
+                        <h4 style="font-size: bold;color: green;">{{videos.user}}||{{videos.updated}}</h4>
+                        <video width='600' height= '240' controls>
+                        <source src="{{videos.videofile.url }}">
+                        </video>
+              
+                    </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+        {%endfor%}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+ 

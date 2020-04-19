@@ -1,0 +1,19 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<div class="container" style="margin-top: 100px">
+  <div class="row">
+    <div class="col-sm-1">  
+    </div>
+    <div class="col-sm-10" >
+        <h3 style="font-size: bold;color:blue;">{{blog.title}}</h3>
+        <p style="font-size: bold;color: green;margin-left:50px;">{{blog.user}}||{{blog.updated}}</p>
+        {% autoescape off %}
+           <p style="text-align: justify;">{{blog.content}}</p> 
+        {% endautoescape %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

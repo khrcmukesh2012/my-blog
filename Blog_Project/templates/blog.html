@@ -1,0 +1,35 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<div class="container" style="margin-top: 100px">
+  <div class="row">
+    <div class="col-sm-1">
+      
+    </div>
+    
+    <div class="col-sm-10" >
+        {% for blogs in blog %}
+        <ul style="list-style-type: none;">
+            <li>
+                <div class="card" style="width:750px">
+                  <div class="card bg-white">
+                    <div class="card-body text-center" style="text-align: justify;">
+                        <h4 style="font-size: bold;color:blue;">{{blogs.title}}</h4>
+                        <h4 style="font-size: bold;color: green;">{{blogs.user}}||{{blogs.updated}}</h4>
+                        {% autoescape off %}
+                           <p style="text-align: justify;">{{blogs.content|truncatechars:300 }}</p> 
+                           <a href="/blog/{{blogs.id}}" style="font-size: bold;text-decoration: none;color:green">Read More</a>
+                        {% endautoescape %}
+              
+                    </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+        {%endfor%}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

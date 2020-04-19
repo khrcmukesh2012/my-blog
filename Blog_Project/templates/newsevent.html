@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container" style="margin-top: 100px">
+  <div class="row">
+    <div class="col-sm-1">
+      
+    </div>
+    <div class="col-sm-10" >
+      {%for pages in page%}
+        <div style="width: 100%;height: 200px;">
+           <h4 style="font-size: bold;color: red;">{{pages.title}}</h4>
+           <h4 style="font-size: bold;color: green;">Last Update at {{pages.updated}}</h4>
+           <img src="{{pages.upload.url }}" style="width: 100%;height: 100%">
+           {% autoescape off %}
+              {{pages.content }}
+           {% endautoescape %}
+       </div>
+     {%endfor%}
+    </div>
+   
+  </div>
+</div>
+
+{%endblock%} 

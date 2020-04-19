@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container" style="margin-top: 100px">
+  <div class="row">
+    <div class="col-sm-1">
+      
+    </div>
+    <div class="col-sm-10" >
+     <!-- <img src="{{ home_page.upload.url }}" style="width: 60%;height: 40%; margin-left: 100px" > -->
+     <h3 style="font-size: bold;color:blue;">{{home_page.title}}</h3>
+     <p style="font-size: bold;color: green;margin-bottom: 30px;margin-left: 20px;">{{home_page.user}}||{{home_page.updated}}</p>
+     {% autoescape off %}
+       <p style="text-align: justify;"> {{ home_page.content }}</p>
+     {% endautoescape %}
+    </div>
+   
+  </div>
+</div>
+
+{%endblock%}
+
+ 
